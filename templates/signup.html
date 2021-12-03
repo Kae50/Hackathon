@@ -1,0 +1,44 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>iLearn</title>
+</head>
+<body> {% block content %}
+    <header class="signupHeader">
+    <nav>
+        <div class="logo"><img src="/media/ILearn.png   " alt=""></div>
+    </nav>
+    <section id="SignUp">
+    <div class="signupImage">
+        <img src="/media/istockphoto.jpg" alt="">
+    </div>
+    <form class="signUpForm" action="" method="POST">
+        <h2> SignUp</h2>
+        {% csrf_token %}
+        {{forms|crispy}}
+        
+        <!-- {{ form.username }} -->
+        {{ form.as_p }}
+        <!-- {{ form.raw_password }} -->
+        
+        <!-- <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="password">
+        <input type="password" placeholder=" confirm password"><br> -->
+        <button type="submit">Signup</button><br>
+        <a href="{% url 'login' %}">Already have an account? Login</a>
+    </form>
+</section>
+</header>
+    <footer>
+        <p>All rights reserved iLearn &copy2021</p>
+    </footer>
+    {% endblock %}
+</body>
+</html>

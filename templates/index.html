@@ -1,0 +1,38 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="favicon-icon" href="media/ILearn.png   ">
+    <title>iLearn</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><img src="media/ILearn.png   " alt=""></div>
+        </nav>
+
+        <section id="landingPage">
+        <div class="content">
+            <h1>Learn to speak<br> Ibani</h1>
+            <p>Effortless learning with a talk-first approach<br>
+                to get you talking from day one.</p>
+
+            <a href="{% url 'login' %}"><button class="Login">Login</button> </a>
+           <a href="{% url 'signup' %}"> <button class="Signup">Create Account</button>
+           </a>
+        </div>
+        
+        <div class="image">
+            <img src="media/istockphoto.jpg" alt="">
+
+        </div>
+        </section>
+    </header>
+    <footer>
+        <p>All rights reserved iLearn &copy2021</p>
+    </footer>
+</body>
+</html>
