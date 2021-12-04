@@ -1,0 +1,231 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="favicon-icon" href="../media/iLearn.png   ">
+    <title>iLearn</title>
+    <link rel="stylesheet" href="../static/font-awesome/font-awesome/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        body{
+            background-color: #fff;
+            width: 100%;
+            height: 100vh;
+        }
+        nav{
+            background-color: #2b3643;
+            padding: 5px 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom:  2px solid gray;
+        }
+        .logo:hover{
+            cursor: pointer;
+        }
+        nav a img{
+            width: 70px;
+        }
+        nav ul{
+            display: flex;
+            justify-content: space-between;
+            margin-right: 10%;
+        }
+        ul .home{
+            font-size: 30px;
+            color: #ffc000;
+        }
+        nav li{
+            padding: 15px;
+        }
+        nav li a{
+            color: #fff;
+            font-family: verdana;
+        }
+        nav li a:hover{
+            color: #ffc000;
+            
+        }
+        #main{
+            display: flex;
+            justify-content: space-between;
+        }
+        .dashBoard{
+            width: 220px;
+            height: 70vh;
+            padding: 30px;
+            text-align: center;
+        }
+        .dashBoard h2{
+            margin: 0px 0px 50px 25px;
+            color: #2b3643;
+            font-family: helvetica;
+        }
+        .dashBoard p{
+            padding:20px 0px 20px 0px;
+        }
+        .dashBoard img{
+            width: 150px;
+            margin-left:20px;
+        }
+        .search{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 15px
+        }
+        .searchfield{
+            padding: 11px;
+            width: 350px;
+            border-radius: 0px 0px 0px 20px;
+        }
+        .searchbutton{
+            padding: 11px;
+            border-radius: 0px 20px 0px 0px;
+            color: #ffc000;
+            background-color: #2b3643;
+            border: 1px solid #2b3643;
+        }
+        .searchbutton:hover{
+            cursor: pointer;
+        }
+        #main .courseOverview{
+            background-color: #2b3643;
+            border: 2px solid gray;
+            max-width: 150%;
+            border-radius: 70px 0px 0px 0px;
+        } 
+        .courseOverview h1{
+            text-align: center;
+            font-family: helvetica;
+            color: #ffff;
+            padding: 20px;
+        }
+        .courses{
+            padding: 10px 8px 0px 75px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .courses .box{
+            display: grid;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 250px;
+            height: 200px;
+            padding: 0px 0px 40px 0px;
+            margin-right: 90px;
+            background-color: #2b3643;
+            border-radius: 30px 30px 0px 0px;
+            
+        }
+        .box img{
+            width: 250px;
+            height: 150px;
+            border-radius: 30px 30px 30px 30px;
+            box-shadow: 2px 12px 15px rgba(0,0,0,0.5);
+        }
+        .box button{
+            padding: 8px;
+            margin: 5px 0px 0px 70px;
+            width: 110px;
+            border-radius: 10px 10px 10px 10px;
+            border: none;
+            background-color: #ffc000;
+            color: #2b3643;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        footer{
+             text-align: center;
+            background-color: #2b3643;
+            color: white;
+            padding: 15px;
+             font-family: monospace;
+            font-size: large;
+            margin-top: 10px;
+}
+    </style>
+</head>
+
+<body>
+    
+        
+        <nav>
+           <a href="#"> <img src="../media/iLearn.png" alt="" class="logo"></a>
+           <ul>
+           <li class="home fa fa-home"><a href="#"></a></li>
+        </ul>
+            
+        </nav>
+        {% block content %}
+           
+
+
+           
+           
+
+
+
+            <div class="search">
+                <form action="{% url 'result' %}" method="GET">
+                    {% csrf_token %}
+            <input type="text" name='keyword' placeholder="Search" class="searchfield">
+            <button class="searchbutton fa fa-search" type="submit"></button></form>
+        </div>
+
+
+        <section id="main">
+            
+
+            <div class="dashBoard">
+                <h2> DashBoard</h2>
+            <img src="../media/home.png" alt="">
+            
+            <p></p>
+            <a href="">Logout</a>
+                
+        </div>
+        <div class="courseOverview">
+            <h1>Course Overview</h1>
+            <div class="courses">
+                <div class="box"><img src="../media/FB_IMG_16385268078847526.jpg" alt="">
+              <a href="{% url 'learn' %}">  <button>Alphabets</button></a></div>
+                <div class="box"><img src="../media/istockphoto.jpg" alt="">
+                <a href="{% url 'learn' %}"> <button>Numbers</button></a></div>
+                <div class="box"><img src="../media/landing.jpg" alt="">
+                        <a href="{% url 'learn' %}"><button>Greetings</button></a></div>
+                
+            </div>
+            <div class="courses">
+                <div class="box"><img src="../media/FB_IMG_16385268078847526.jpg" alt="">
+                    <a href="{% url 'learn' %}"><button>Speech</button></a></div>
+                <div class="box"><img src="../media/FB_IMG_16385268078847526.jpg" alt="">
+                   <a href="{% url 'learn' %}"> <button>Science</button></a></div>
+                <div class="box"><img src="../media/FB_IMG_16385268078847526.jpg" alt="">
+                        <a href="{% url 'learn' %}"><button>Animals</button></a></div>
+                
+            </div>
+        </div>
+        </section>
+        <footer>
+            <p>All rights reserved iLearn &copy2021</p>
+        </footer>
+       
+        {% endblock%}
+
+</body>
+
+
+
+
+
+</html>

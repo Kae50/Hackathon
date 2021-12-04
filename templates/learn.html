@@ -1,0 +1,173 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="favicon-icon" href="../media/iLearn.png   ">
+    <title>iLearn</title>
+    <link rel="stylesheet" href="../static/font-awesome/font-awesome/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        body{
+            background-color: #fff;
+            width: 100%;
+            height: 100vh;
+        }
+        nav{
+            background-color: #2b3643;
+            padding: 5px 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom:  2px solid gray;
+        }
+        .logo:hover{
+            cursor: pointer;
+        }
+        nav a img{
+            width: 70px;
+        }
+        nav ul{
+            display: flex;
+            justify-content: space-between;
+            margin-right: 40%;
+        }
+        nav li{
+            padding: 15px;
+        }
+        nav li a{
+            color: #fff;
+            font-family: verdana;
+        }
+        nav li a:hover{
+            color: #ffc000;
+            
+        }
+        ul .home{
+            font-size: 30px;
+            color: #ffc000;
+        }
+        .search{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 15px
+        }
+        .searchfield{
+            padding: 11px;
+            width: 350px;
+            border-radius: 0px 0px 0px 20px;
+        }
+        .searchbutton{
+            padding: 11px;
+            border-radius: 0px 20px 0px 0px;
+            color: #ffc000;
+            background-color: #2b3643;
+            border: 1px solid #2b3643;
+        }
+        .searchbutton:hover{
+            cursor: pointer;
+        }
+        #main{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dashBoard{
+            width: 220px;
+            height: 70vh;
+            padding: 30px;
+            text-align: center;
+        }
+        .dashBoard h2{
+            margin: 0px 0px 50px 25px;
+            color: #2b3643;
+            font-family: helvetica;
+        }
+        .dashBoard p{
+            padding:20px 0px 20px 0px;
+        }
+        .dashBoard img{
+            width: 150px;
+            margin-left:20px;
+        }
+        .result{
+           margin:0% 30% 10% 0%; 
+           box-shadow: lightgrey 0px 3px 3px 0px;
+           width: 450px;
+           border-radius: 20px;
+           text-align: center;
+        }
+        .result h1{
+            background-color: #ffc000;
+            padding: 10px;
+            border-radius: 20px 20px 0px 0px;
+            font-family: helvetica;
+        }
+        .result p{
+            font-size: 18px;
+            font-family: verdana;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+        
+        <nav>
+           <a href="#"> <img src="../media/iLearn.png" alt="" class="logo"></a>
+           <ul>
+           <li><a href="#">Home</a></li>
+           
+        </ul>
+            
+        </nav>
+
+
+            <div class="search">
+                <form action="{% url 'result' %}" method="GET">
+                    {% csrf_token %}
+            <input type="text" name='keyword' placeholder="Search" class="searchfield">
+            <button class="searchbutton fa fa-search" type="submit"></button></form>
+        </div>
+
+
+        <section id="main">
+            <div class="dashBoard">
+                <h2> DashBoard</h2>
+            <img src="../media/home.png" alt="">
+            <p>{{ user}}</p>
+            <a href="">Logout</a>
+
+            </div>
+            <div class="result">
+                <h1> Lesson </h1>
+                {% block content %}
+
+                {% for words in object_list %}
+                
+               <p value='keyword'><strong>English:</strong>  {{ words.word }}</p> 
+               <p><strong>Ibani:</strong> &nbsp; {{ words.translation }}</p>
+               <div class="speak"></div>
+
+                {% endfor %}
+
+
+                {% endblock %}
+
+            </div>
+        </section>
+        <script src=""></script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+header{
+    width: 100%;
+    height: 100vh;
+}
+header nav{
+    display: flex;
+    background-color: #2b3643;
+    color: #ffc000;
+    padding: 5px;
+}
+nav .logo img{
+    width: 75px;
+    margin-left: 50px;
+}
+#landingPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+#landingPage .content{
+    padding: 3% 0% 3% 0;
+}
+.content{
+    display: grid;
+}
+.content h1{
+    font-size: 65px;
+    font-family: Arial Rounded MT;
+    color: #2b3643;
+}
+.content p{
+    font-size: 18px;
+    padding: 20px 0px;
+    font-family: verdana;
+}
+.content .Login{
+    width: 350px;
+    padding: 12px;
+    border-radius: 25px ;
+    border: 2px solid gray;
+    font-size: large;
+    margin: 15px 0 10px 0;
+    background-color: white;
+    color: #2b3643;
+    font-weight: bold;
+}
+.content .Login:hover{
+    background-color: lightgray;
+    transition: ease 1s;
+}
+.content .Signup{
+    width: 350px;
+    padding: 12px;
+    border-radius: 25px ;
+    border: 2px solid #ffc000;
+    font-size: large;
+    background-color: #ffc000;
+    color: #2b3643;
+    font-weight: bold;
+}
+.content .Signup:hover{
+    background-color: lightgrey;
+    transition: ease 1s;
+    border: 2px solid #2b3643;
+}
+.image img{
+    width: 500px;
+}
+footer{
+    text-align: center;
+    background-color: #2b3643;
+    color: white;
+    padding: 15px;
+    font-family: monospace;
+    font-size: large;
+}
+/*  Login Page */
+#Login{
+    display: flex;
+    justify-content: center;
+    padding: 10%; 
+}
+.loginForm h2{
+    font-size: xx-large;
+    font-family: arial rounded mt;
+    padding: 20px;
+    color: #2b3643;
+}
+.loginForm{
+    background-color: rgba(56, 41, 41, 0.082);
+    border-radius: 30px;
+    text-align: center;
+    padding: 8px;
+}
+.loginForm input{
+    width: 350px;
+    border-radius: 20px;
+    padding: 15px;  
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    border: none;
+}
+.loginForm button{
+    width: 150px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: large;
+    background-color: #ffc000;
+    color: #2b3643;
+    border: 1px solid #ffc000;
+}
+.loginForm button:hover{
+    border: 1px solid #2b3643;
+    background-color: lightgrey;
+    transition: ease 1s;
+}
+.loginForm a{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    
+}
+.loginForm a:hover{
+    color: red;
+}
+
+
+/* Sign Up */
+#SignUp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%; 
+}
+.signUpForm{
+    background-color: rgba(56, 41, 41, 0.082);
+    border-radius: 30px;
+    text-align: center;
+    padding: 3px;
+}
+.signUpForm h2{
+    font-size: xx-large;
+    font-family: arial rounded mt;
+    padding: 20px;
+    color: #2b3643;
+}
+ .signUpForm input{
+    width: 450px;
+    border-radius: 20px;
+    padding: 15px;  
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border: none;
+}
+.signUpForm button{
+    width: 150px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: large;
+    background-color: #ffc000;
+    color: #2b3643;
+    border: 1px solid #ffc000;
+}
+.signUpForm button:hover{
+    border: 1px solid #2b3643;
+    background-color: lightgrey;
+    transition: ease 1s;
+}
+.signUpForm a{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    
+}
+.signUpForm a:hover{
+    color: red;
+} 
+
+
+/* Home Page */
