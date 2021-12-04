@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Word,Number
+from .models import Word,Number, newWords
 
 # Register your models here.
 class wordAdmin(admin.ModelAdmin):
@@ -11,4 +11,9 @@ class numberAdmin(admin.ModelAdmin):
     list_display = ('word', 'translation')
 
 admin.site.register(Number,numberAdmin)
+
+class newWordsAdmin(admin.ModelAdmin):
+    list_display = ('word', 'translation')
+
+admin.site.register(newWords,newWordsAdmin)
     

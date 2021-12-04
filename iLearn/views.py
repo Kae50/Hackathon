@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,ListView
-from .models import Word, Number
+from .models import Word, Number,newWords
 from django.db.models import Q
 from . import forms
 from .forms import SignUpForm
@@ -36,6 +36,8 @@ def Login(request):
 
 class LandPageView(TemplateView):
     template_name = 'index.html'
+class GreetingView(TemplateView):
+    template_name = 'greetings.html'
 
 # def Login(request):
 #     return render(request, 'login.html')
@@ -43,6 +45,9 @@ class LandPageView(TemplateView):
 
 class HomeView(TemplateView):
     template_name = 'home.html'
+
+def logout(request):
+    return render(request, 'index.html')
 
 class resultView(ListView):
     template_name = 'result.html'
@@ -63,6 +68,16 @@ class numberView(ListView):
     def get_queryset(self):
         query = self.request.GET.get('keyword')
         object_list = Number.objects.all()
+
+        return object_list
+
+class WordsView(ListView):
+    template_name = 'words.html'
+    model = Number
+
+    def get_queryset(self):
+        query = self.request.GET.get('keyword')
+        object_list = newWords.objects.all()
 
         return object_list
 

@@ -191,18 +191,18 @@
             <img src="../media/home.png" alt="">
             
             <p></p>
-            <a href="">Logout</a>
+            <a href="{% url 'index' %}">Logout</a>
                 
         </div>
         <div class="courseOverview">
             <h1>Course Overview</h1>
             <div class="courses">
                 <div class="box"><img src="../media/FB_IMG_16385268078847526.jpg" alt="">
-              <a href="{% url 'learn' %}">  <button>Alphabets</button></a></div>
+              <a href="{% url 'words' %}">  <button>Words</button></a></div>
                 <div class="box"><img src="../media/istockphoto.jpg" alt="">
                 <a href="{% url 'learn' %}"> <button>Numbers</button></a></div>
                 <div class="box"><img src="../media/landing.jpg" alt="">
-                        <a href="{% url 'learn' %}"><button>Greetings</button></a></div>
+                        <a href="{% url 'greetings' %}"><button>Greetings</button></a></div>
                 
             </div>
             <div class="courses">
