@@ -7,5 +7,5 @@ urlpatterns = [
     path('signup/', views.SignUp, name='signup'),
     path('home/', views.HomeView.as_view(), name='home'),
     path('search/',views.resultView.as_view(),name='result'),
-    path('learn/',views.resultView.as_view(),name='learn'),
+    path('learn/',views.numberView.as_view(),name='learn'),
 ]

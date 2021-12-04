@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,ListView
-from .models import Word
+from .models import Word, Number
 from django.db.models import Q
 from . import forms
 from .forms import SignUpForm
@@ -55,3 +55,14 @@ class resultView(ListView):
             )
 
         return object_list
+
+class numberView(ListView):
+    template_name = 'learn.html'
+    model = Number
+
+    def get_queryset(self):
+        query = self.request.GET.get('keyword')
+        object_list = Number.objects.all()
+
+        return object_list
+
