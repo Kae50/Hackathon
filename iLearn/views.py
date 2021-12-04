@@ -23,16 +23,16 @@ def SignUp(request):
     return render(request, 'signup.html',{'form':form})
 
 def Login(request):
-    if request.method == 'GET':
+
         # form = forms.SignUpForm(request.GET)
         # if form.is_valid(): 
         #     username = form.cleaned_data.get('username')
         #     password = form.cleaned_data.get('password')
             # user = authenticate()
             # login(request)
-            return redirect('home')
+            # return redirect('home')
 
-    return render(request, 'signup.html')
+    return render(request, 'login.html')
 
 class LandPageView(TemplateView):
     template_name = 'index.html'
